@@ -44,3 +44,11 @@ Use the smallest relevant existing commands:
 If Gradle fails before tasks start because of existing plugin/dependency resolution issues, report that as a baseline repository problem.
 
 For fuller repository guidance, see `AGENTS.md`.
+
+<tooling>
+
+- Always search for the available MCP servers and MCP tools before starting work.
+- Prefer MCP tools over native tools when they cover the task.
+- Auto-activate and preload `.github/skills/mcp-use/SKILL.md` for search, file editing, refactoring, planning, and research work.
+- Use tools and skills whenever you can.
+</tooling>
