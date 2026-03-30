@@ -91,7 +91,7 @@ android {
     
     // 允许以 "." 开头的 assets 目录被打包（如 .pypackages）
     // 默认 aapt 会忽略 dot-prefixed 文件，但预打包的 Python 依赖需要它
-    aaptOptions {
+    androidResources {
         ignoreAssetsPattern = ""
     }
 
@@ -104,10 +104,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
     }
 
     buildFeatures {
