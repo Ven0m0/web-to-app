@@ -4,7 +4,7 @@
 - **WebToApp** is an Android app that turns websites, media projects, frontend bundles, and some server-side projects into Android apps.
 - Primary stack: **Kotlin**, **Jetpack Compose**, **Room**, **DataStore**, **Koin**, **OkHttp**, **WebView**, **GeckoView**, plus native code under `app/src/main/cpp`.
 - Main module: `:app`.
-- Main source root: `/home/runner/work/web-to-app/web-to-app/app/src/main`.
+- Main source root: `app/src/main`.
 
 ## Repository map
 - `app/src/main/java/com/webtoapp/core`: build/export, runtime, networking, crypto, engine, and platform integration logic.

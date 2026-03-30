@@ -3,7 +3,7 @@
 ## Repo summary
 - This repository is a security-sensitive Android app built mainly with **Kotlin + Jetpack Compose** in the `:app` module.
 - It includes native code, APK build/export logic, WebView/GeckoView runtime logic, local HTTP serving, and encrypted/local credential handling.
-- Main source root: `/home/runner/work/web-to-app/web-to-app/app/src/main`.
+- Main source root: `app/src/main`.
 
 ## How to work in this repo
 - Make **small, localized changes** that preserve existing behavior.
