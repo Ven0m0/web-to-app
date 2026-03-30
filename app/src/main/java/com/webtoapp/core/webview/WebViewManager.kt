@@ -421,6 +421,19 @@ class WebViewManager(
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     safeBrowsingEnabled = true
                 }
+
+                // Remove X-Requested-With header for all origins to prevent WebView identity
+                // leakage. Android WebView automatically injects this header with the app's
+                // package name, which reveals to any server that the request comes from an
+                // embedded WebView. Sites like Reddit use this to block login in WebViews.
+                if (WebViewFeature.isFeatureSupported(WebViewFeature.REQUESTED_WITH_HEADER_ALLOW_LIST)) {
+                    runCatching {
+                        WebSettingsCompat.setRequestedWithHeaderOriginAllowList(this, emptySet())
+                        AppLogger.d("WebViewManager", "X-Requested-With header disabled globally")
+                    }.onFailure { error ->
+                        AppLogger.w("WebViewManager", "Failed to disable X-Requested-With header", error)
+                    }
+                }
             }
 
             // Scrollbar
