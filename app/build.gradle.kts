@@ -196,7 +196,7 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.2.1")
     
     // Security - EncryptedSharedPreferences for secure token storage
-    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+    implementation("androidx.security:security-crypto:1.1.0")
     
     // Apache Commons Compress for tar.gz/xz extraction (Linux environment)
     implementation("org.apache.commons:commons-compress:1.28.0")
