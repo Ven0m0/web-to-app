@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.Exec
+import java.net.URL
 import java.util.Properties
 
 plugins {
@@ -239,38 +241,79 @@ dependencies {
 // Run: ./gradlew downloadPhpBinary
 // This only needs to run once (the binary is gitignored).
 
+val phpVersion = "8.4"
+val phpArchiveUrl = "https://github.com/pmmp/PHP-Binaries/releases/download/pm5-php-${phpVersion}-latest/PHP-${phpVersion}-Android-arm64-PM5.tar.gz"
+val phpTempDir = layout.buildDirectory.dir("tmp/php-download")
+val phpArchiveFile = phpTempDir.map { it.file("php.tar.gz").asFile }
+val phpOutputFile = layout.projectDirectory.file("src/main/jniLibs/arm64-v8a/libphp.so").asFile
+
+val downloadPhpBinaryArchive = tasks.register("downloadPhpBinaryArchive") {
+    description = "Downloads the PHP binary archive for Android arm64"
+    group = "setup"
+
+    outputs.file(phpArchiveFile)
+    onlyIf { !phpOutputFile.exists() }
+
+    doLast {
+        val tempDir = phpTempDir.get().asFile
+        val archiveFile = phpArchiveFile.get()
+
+        tempDir.mkdirs()
+
+        println("Downloading PHP $phpVersion for Android arm64...")
+        URL(phpArchiveUrl).openStream().use { input ->
+            archiveFile.outputStream().use { output ->
+                input.copyTo(output)
+            }
+        }
+    }
+}
+
+val extractPhpBinaryArchive = tasks.register<Exec>("extractPhpBinaryArchive") {
+    description = "Extracts the downloaded PHP binary archive"
+    group = "setup"
+
+    dependsOn(downloadPhpBinaryArchive)
+    inputs.file(phpArchiveFile)
+    outputs.dir(phpTempDir)
+    onlyIf { !phpOutputFile.exists() }
+
+    doFirst {
+        phpTempDir.get().asFile.mkdirs()
+    }
+
+    commandLine(
+        "tar",
+        "-xzf",
+        phpArchiveFile.get().absolutePath,
+        "-C",
+        phpTempDir.get().asFile.absolutePath
+    )
+}
+
 tasks.register("downloadPhpBinary") {
     description = "Downloads pre-built PHP binary for Android arm64 and bundles it as native library"
     group = "setup"
-    
-    val phpVersion = "8.4"
-    val jniLibsDir = file("src/main/jniLibs/arm64-v8a")
-    val outputFile = File(jniLibsDir, "libphp.so")
-    
-    onlyIf { !outputFile.exists() }
-    
+
+    dependsOn(extractPhpBinaryArchive)
+    outputs.file(phpOutputFile)
+    onlyIf { !phpOutputFile.exists() }
+
     doLast {
-        jniLibsDir.mkdirs()
-        val url = "https://github.com/pmmp/PHP-Binaries/releases/download/pm5-php-${phpVersion}-latest/PHP-${phpVersion}-Android-arm64-PM5.tar.gz"
-        val tempDir = File(project.layout.buildDirectory.asFile.get(), "tmp/php-download")
-        tempDir.mkdirs()
-        val tarFile = File(tempDir, "php.tar.gz")
-        
-        println("Downloading PHP $phpVersion for Android arm64...")
-        project.exec { commandLine("curl", "-L", "-f", "-o", tarFile.absolutePath, url) }
-        
-        println("Extracting PHP binary...")
-        project.exec { commandLine("tar", "-xzf", tarFile.absolutePath, "-C", tempDir.absolutePath) }
-        
+        val tempDir = phpTempDir.get().asFile
+        phpOutputFile.parentFile.mkdirs()
+
+        println("Installing PHP binary...")
+
         // pmmp tar.gz structure: bin/php or just php
-        val extracted = File(tempDir, "bin/php").takeIf { it.exists() }
+        val extracted = File(tempDir, "bin/php").takeIf { it.isFile }
             ?: tempDir.walkTopDown().firstOrNull { it.name == "php" && it.isFile }
             ?: throw GradleException("PHP binary not found in archive")
-        
-        extracted.copyTo(outputFile, overwrite = true)
-        outputFile.setExecutable(true)
+
+        extracted.copyTo(phpOutputFile, overwrite = true)
+        phpOutputFile.setExecutable(true)
         tempDir.deleteRecursively()
-        
-        println("PHP binary installed: ${outputFile.relativeTo(rootDir)}")
+
+        println("PHP binary installed: ${phpOutputFile.relativeTo(rootDir)}")
     }
 }
