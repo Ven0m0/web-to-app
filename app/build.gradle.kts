@@ -186,8 +186,8 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     
     // Koin for dependency injection
-    implementation("io.insert-koin:koin-android:3.5.3")
-    implementation("io.insert-koin:koin-androidx-compose:3.5.3")
+    implementation("io.insert-koin:koin-android:4.2.0")
+    implementation("io.insert-koin:koin-androidx-compose:4.2.0")
 
     // WebKit for advanced WebView features
     implementation("androidx.webkit:webkit:1.15.0")
