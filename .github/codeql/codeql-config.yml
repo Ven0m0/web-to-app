@@ -1,0 +1,2 @@
+paths-ignore:
+  - 'app/src/main/assets/sample_projects/**/.pypackages/**'
