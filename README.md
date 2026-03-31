@@ -6,8 +6,6 @@
 
 ### 🚀 Transform Websites into Android Apps in Seconds
 
-**English** | [简体中文](README_CN.md)
-
 <p>
   <a href="https://github.com/shiahonb777/web-to-app/stargazers"><img src="https://img.shields.io/github/stars/shiahonb777/web-to-app?style=for-the-badge&logo=github&color=f4c542" alt="Stars"></a>
   <a href="https://github.com/shiahonb777/web-to-app/network/members"><img src="https://img.shields.io/github/forks/shiahonb777/web-to-app?style=for-the-badge&logo=github&color=6cc644" alt="Forks"></a>
@@ -21,6 +19,7 @@
   <img src="https://img.shields.io/badge/Material_3-757575?style=flat-square&logo=materialdesign&logoColor=white" alt="Material 3">
 </p>
 
+[![Maintainability](https://qlty.sh/gh/Ven0m0/projects/web-to-app/maintainability.svg)](https://qlty.sh/gh/Ven0m0/projects/web-to-app)
 <br/>
 
 > 📱 **No coding required** · Build APKs directly on your phone · **No Android Studio needed**
