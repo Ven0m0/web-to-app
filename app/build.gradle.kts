@@ -200,14 +200,14 @@ dependencies {
     implementation("com.android.tools.build:apksig:9.1.0")
     
     // GeckoView (Firefox 内核) — Java/Kotlin API 编译进 dex，原生 .so 排除（按需下载）
-    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:149.0.20260318190823")
+    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:149.0.20260330092855")
     
     // ZXing 二维码生成和扫描
     implementation("com.google.zxing:core:3.5.4")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     
     // Vico 图表库（高级数据看板）
-    implementation("com.patrykandpatrick.vico:compose-m3:3.1.0-alpha.3")
+    implementation("com.patrykandpatrick.vico:compose-m3:3.1.0-beta.1")
     
     // Google Play Billing (Pro/Ultra 订阅)
     implementation("com.android.billingclient:billing-ktx:8.3.0")
