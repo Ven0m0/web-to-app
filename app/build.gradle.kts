@@ -180,8 +180,8 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:5.3.2")
     
     // Koin for dependency injection
-    implementation("io.insert-koin:koin-android:4.2.0")
-    implementation("io.insert-koin:koin-androidx-compose:4.2.0")
+    implementation("io.insert-koin:koin-android:4.2.1")
+    implementation("io.insert-koin:koin-androidx-compose:4.2.1")
 
     // WebKit for advanced WebView features
     implementation("androidx.webkit:webkit:1.15.0")
@@ -200,7 +200,7 @@ dependencies {
     implementation("com.android.tools.build:apksig:9.1.0")
     
     // GeckoView (Firefox 内核) — Java/Kotlin API 编译进 dex，原生 .so 排除（按需下载）
-    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:149.0.20260330092855")
+    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:149.0.20260403140140")
     
     // ZXing 二维码生成和扫描
     implementation("com.google.zxing:core:3.5.4")
@@ -213,8 +213,8 @@ dependencies {
     implementation("com.android.billingclient:billing-ktx:8.3.0")
     
     // Google Sign-In (Credential Manager + Web OAuth fallback)
-    implementation("androidx.credentials:credentials:1.5.0")
-    implementation("androidx.credentials:credentials-play-services-auth:1.5.0")
+    implementation("androidx.credentials:credentials:1.6.0")
+    implementation("androidx.credentials:credentials-play-services-auth:1.6.0")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.2.0")
     implementation("androidx.browser:browser:1.10.0") // Chrome Custom Tab for OAuth fallback
     
