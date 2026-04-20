@@ -197,7 +197,7 @@ dependencies {
     implementation("org.tukaani:xz:1.12")
     
     // APK 签名库（支持 v1/v2/v3 签名）
-    implementation("com.android.tools.build:apksig:9.1.0")
+    implementation("com.android.tools.build:apksig:9.1.1")
     
     // GeckoView (Firefox 内核) — Java/Kotlin API 编译进 dex，原生 .so 排除（按需下载）
     implementation("org.mozilla.geckoview:geckoview-arm64-v8a:149.0.20260403140140")
