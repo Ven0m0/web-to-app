@@ -207,7 +207,7 @@ dependencies {
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     
     // Vico 图表库（高级数据看板）
-    implementation("com.patrykandpatrick.vico:compose-m3:3.1.0")
+    implementation("com.patrykandpatrick.vico:compose-m3:3.2.0-next.1")
     
     // Google Play Billing (Pro/Ultra 订阅)
     implementation("com.android.billingclient:billing-ktx:8.3.0")
