@@ -149,7 +149,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
 
     // Compose
-    implementation(platform("androidx.compose:compose-bom:2026.04.01"))
+    implementation(platform("androidx.compose:compose-bom:2026.05.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
@@ -184,7 +184,7 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-compose:4.2.1")
 
     // WebKit for advanced WebView features
-    implementation("androidx.webkit:webkit:1.15.0")
+    implementation("androidx.webkit:webkit:1.16.0")
 
     // DataStore for preferences
     implementation("androidx.datastore:datastore-preferences:1.2.1")
@@ -197,7 +197,7 @@ dependencies {
     implementation("org.tukaani:xz:1.12")
     
     // APK 签名库（支持 v1/v2/v3 签名）
-    implementation("com.android.tools.build:apksig:9.2.0")
+    implementation("com.android.tools.build:apksig:9.2.1")
     
     // GeckoView (Firefox 内核) — Java/Kotlin API 编译进 dex，原生 .so 排除（按需下载）
     implementation("org.mozilla.geckoview:geckoview-arm64-v8a:150.0.20260427013024")
