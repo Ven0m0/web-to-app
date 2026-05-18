@@ -142,7 +142,7 @@ dependencies {
     implementation("androidx.documentfile:documentfile:1.1.0")
     
     // Material Design 3
-    implementation("com.google.android.material:material:1.13.0")
+    implementation("com.google.android.material:material:1.14.0")
     implementation("androidx.activity:activity-compose:1.13.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.10.0")
@@ -166,7 +166,7 @@ dependencies {
     ksp("androidx.room:room-compiler:2.8.4")
 
     // Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
 
     // Coil for image loading
     implementation("io.coil-kt:coil-compose:2.7.0")
@@ -200,7 +200,7 @@ dependencies {
     implementation("com.android.tools.build:apksig:9.2.1")
     
     // GeckoView (Firefox 内核) — Java/Kotlin API 编译进 dex，原生 .so 排除（按需下载）
-    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:150.0.20260427013024")
+    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:150.0.20260511200624")
     
     // ZXing 二维码生成和扫描
     implementation("com.google.zxing:core:3.5.4")
@@ -220,7 +220,7 @@ dependencies {
     
     // Testing
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
     testImplementation("com.google.truth:truth:1.4.5")
     testImplementation("org.robolectric:robolectric:4.16.1")
     testImplementation("androidx.test:core:1.7.0")
