@@ -200,7 +200,7 @@ dependencies {
     implementation("com.android.tools.build:apksig:9.2.1")
     
     // GeckoView (Firefox 内核) — Java/Kotlin API 编译进 dex，原生 .so 排除（按需下载）
-    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:150.0.20260427013024")
+    implementation("org.mozilla.geckoview:geckoview-arm64-v8a:151.0.20260601110758")
     
     // ZXing 二维码生成和扫描
     implementation("com.google.zxing:core:3.5.4")
