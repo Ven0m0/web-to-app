@@ -210,7 +210,7 @@ dependencies {
     implementation("com.patrykandpatrick.vico:compose-m3:3.2.0-next.4")
     
     // Google Play Billing (Pro/Ultra 订阅)
-    implementation("com.android.billingclient:billing-ktx:8.3.0")
+    implementation("com.android.billingclient:billing-ktx:9.0.0")
     
     // Google Sign-In (Credential Manager + Web OAuth fallback)
     implementation("androidx.credentials:credentials:1.6.0")
