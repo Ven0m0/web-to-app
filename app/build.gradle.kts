@@ -135,7 +135,7 @@ android {
 
 dependencies {
     // Core Android
-    implementation("androidx.core:core-ktx:1.18.0")
+    implementation("androidx.core:core-ktx:1.19.0")
     implementation("androidx.appcompat:appcompat:1.7.1")
     implementation("androidx.core:core-splashscreen:1.2.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0")
@@ -177,11 +177,11 @@ dependencies {
     implementation("com.google.code.gson:gson:2.14.0")
 
     // OkHttp for networking
-    implementation("com.squareup.okhttp3:okhttp:5.3.2")
+    implementation("com.squareup.okhttp3:okhttp:5.4.0")
     
     // Koin for dependency injection
-    implementation("io.insert-koin:koin-android:4.2.1")
-    implementation("io.insert-koin:koin-androidx-compose:4.2.1")
+    implementation("io.insert-koin:koin-android:4.2.2")
+    implementation("io.insert-koin:koin-androidx-compose:4.2.2")
 
     // WebKit for advanced WebView features
     implementation("androidx.webkit:webkit:1.16.0")
